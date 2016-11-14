@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { TranslateService } from 'ng2-translate';
+
 @Component({
     selector: 'cps-root',
     templateUrl: './app.component.html',
@@ -8,4 +10,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
     title = 'app works!';
+
+    constructor(translate: TranslateService) {
+        translate.setDefaultLang('en');
+        translate.use('en');
+    }
 }

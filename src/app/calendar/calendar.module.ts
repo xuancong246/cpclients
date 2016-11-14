@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from 'ng2-translate';
+
 import { CalendarRoutingModule } from './calendar-routing.module';
 
 import { CalendarComponent } from './calendar.component';
@@ -11,7 +13,7 @@ import { CaMenuComponent } from './ca-menu/ca-menu.component';
 @NgModule({
     imports: [
         CommonModule,
-
+        TranslateModule,
         CalendarRoutingModule
     ],
     declarations: [CalendarComponent, CaDashboardComponent, CaSettingsComponent, CaMenuComponent]

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { TranslateModule } from 'ng2-translate';
+
 import { FinancialRoutingModule } from './financial-routing.module';
 
 import { FinancialComponent } from './financial.component';
@@ -13,6 +15,7 @@ import { FiMenuComponent } from './fi-menu/fi-menu.component';
 @NgModule({
     imports: [
         CommonModule,
+        TranslateModule,
         FinancialRoutingModule
     ],
     declarations: [
