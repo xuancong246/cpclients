@@ -6,6 +6,7 @@ import { HttpModule, Http } from '@angular/http';
 import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate'
 
 import { AppRoutingModule } from './app-routing.module';
+import { AdminModule } from './admin/admin.module';
 import { FinancialModule } from './financial/financial.module';
 import { ProjectModule } from './project/project.module';
 import { CalendarModule } from './calendar/calendar.module';
@@ -30,6 +31,7 @@ import { HomeComponent } from './home/home.component';
         }),
 
         AppRoutingModule,
+        AdminModule,
         FinancialModule,
         ProjectModule,
         CalendarModule
