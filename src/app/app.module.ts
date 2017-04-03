@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, Http } from '@angular/http';
 
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate'
+import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
@@ -13,6 +13,10 @@ import { CalendarModule } from './calendar/calendar.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+
+export function TranslateLoaderFactory(http: Http) {
+    return new TranslateStaticLoader(http, '/assets/i18n', '.json');
+}
 
 @NgModule({
     declarations: [
@@ -26,7 +30,7 @@ import { HomeComponent } from './home/home.component';
 
         TranslateModule.forRoot({
             provide: TranslateLoader,
-            useFactory: (http: Http) => new TranslateStaticLoader(http, '/assets/i18n', '.json'),
+            useFactory: TranslateLoaderFactory,
             deps: [Http]
         }),
 

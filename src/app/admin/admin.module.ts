@@ -7,7 +7,8 @@ import { AdOrganizationsComponent } from './ad-organizations/ad-organizations.co
 import { AdUsersComponent } from './ad-users/ad-users.component';
 import { AdRolesComponent } from './ad-roles/ad-roles.component';
 import { AdFundsComponent } from './ad-funds/ad-funds.component';
-import { AdPageHeaderDirective } from './shared/ad-page-header.directive';
+import { AdPageHeaderDirective } from './shared/directives/ad-page-header.directive';
+import { AdPageActionBarDirective } from './shared/directives/ad-page-action-bar.directive';
 
 @NgModule({
     imports: [
@@ -20,7 +21,8 @@ import { AdPageHeaderDirective } from './shared/ad-page-header.directive';
         AdUsersComponent,
         AdRolesComponent,
         AdFundsComponent,
-        AdPageHeaderDirective
+        AdPageHeaderDirective,
+        AdPageActionBarDirective
     ]
 })
 
