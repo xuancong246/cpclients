@@ -9,6 +9,8 @@ import { AdOrganizationDataService } from '../shared/services/data/ad-organizati
     styleUrls: ['./ad-organizations.component.less']
 })
 export class AdOrganizationsComponent implements OnInit {
+    isAddingOrganization: boolean = false;
+    selectedOrganization: AdOrganizationModel;
 
     constructor(private _adOrganizationDataService: AdOrganizationDataService) {
     }
@@ -20,6 +22,18 @@ export class AdOrganizationsComponent implements OnInit {
 
         this._adOrganizationDataService.getOrganizations()
             .subscribe(
-            organizations => self.organizations = organizations);
+            organizations => self.organizations = organizations,
+            error => console.log(error)
+        );
+    }
+
+    addOrganization() {
+        this.isAddingOrganization = true;
+        this.selectedOrganization = null;
+    }
+
+    selectOrganization(organization: AdOrganizationModel) {
+        this.isAddingOrganization = false;
+        this.selectedOrganization = organization;
     }
 }

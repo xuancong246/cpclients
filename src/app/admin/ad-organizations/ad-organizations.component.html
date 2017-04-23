@@ -1,7 +1,7 @@
 <div cpsAdPageHeader>organization-management</div>
 <div cpsAdPageActionBar>
     <ul class="list-inline">
-        <li class="list-inline-item">
+        <li class="list-inline-item" (click)="addOrganization()">
             <i class="fa fa-plus" aria-hidden="true"></i>
             add
         </li>
@@ -11,21 +11,11 @@
         </li>
     </ul>
 </div>
-<div>
-    <h3>organization-info</h3>
-    <form class="form-horizontal" name="organizationForm">
-        <div class="row form-group">
-            <div class="col-md-6">
-                <label for="og-name">name</label>
-                <input type="text" class="form-control" id="og-name" />
-            </div>
-            <div class="col-md-6">
-                <label for="og-address">address</label>
-                <input type="text" class="form-control" id="og-address" />
-            </div>
-        </div>
-    </form>
+<!--<cps-ad-organization-editor></cps-ad-organization-editor>-->
+<div *ngIf="selectedOrganization || isAddingOrganization">
+    <cps-ad-organization-editor2 [organization]="selectedOrganization"></cps-ad-organization-editor2>
 </div>
+TODO remove me {{ selectedOrganization | json }}
 <table class="table table-hover">
     <thead>
         <tr>
@@ -36,7 +26,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let organization of organizations">
-            <td>{{ organization.name }}</td>
+            <td>
+                <a (click)="selectOrganization(organization)">
+                    {{ organization.name }}
+                </a>
+            </td>
             <td>{{ organization.address }}</td>
             <td>{{ organization.description }}</td>
         </tr>

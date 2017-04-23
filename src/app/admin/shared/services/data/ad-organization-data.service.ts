@@ -27,13 +27,18 @@ export class AdOrganizationDataService {
         console.log(error);
         return Observable.throw('Getting organizations was not successful.');
     }
+
+    updateOrganization(organization: any) {
+        return this._http
+            .put(environment.apiUrl + 'organizations', organization);
+    }
 }
 
 function toOrganization(record: any): AdOrganizationModel {
     return {
         id: record._id,
         name: record.name,
-        address: 'sample',
+        address: record.address,
         description: record.description
     }
 }

@@ -1,6 +1,8 @@
 export class AdOrganizationModel {
-	id: string;
-	name: string;
-	address: string;
-	description: string;
+    constructor(
+        public id: string,
+        public name: string,
+        public address: string,
+        public description: string
+    ) { }
 }
