@@ -1,0 +1,38 @@
+<div cpsAdPageHeader>organization-management</div>
+<div cpsAdPageActionBar>
+    <ul class="list-inline">
+        <li class="list-inline-item" (click)="addOrganization()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            add
+        </li>
+        <li class="list-inline-item">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            delete
+        </li>
+    </ul>
+</div>
+<!--<cps-ad-organization-editor></cps-ad-organization-editor>-->
+<div *ngIf="selectedOrganization || isAddingOrganization">
+    <cps-ad-organization-editor2 [organization]="selectedOrganization"></cps-ad-organization-editor2>
+</div>
+TODO remove me {{ selectedOrganization | json }}
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Organization Name</th>
+            <th>Address</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let organization of organizations">
+            <td>
+                <a (click)="selectOrganization(organization)">
+                    {{ organization.name }}
+                </a>
+            </td>
+            <td>{{ organization.address }}</td>
+            <td>{{ organization.description }}</td>
+        </tr>
+    </tbody>
+</table>

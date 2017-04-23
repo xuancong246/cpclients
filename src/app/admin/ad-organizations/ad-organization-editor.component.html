@@ -1,0 +1,26 @@
+<div>
+    <h3>organization-info</h3>
+    <form class="form-horizontal" #ogForm="ngForm">
+        TODO object {{toString}}
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="og-name">name</label>
+                <input type="text" class="form-control" id="og-name" name="ogName"
+                       [(ngModel)]="organization.name" required #spy #name="ngModel" />
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    organization-name-is-required
+                </div>
+                TODO remove {{spy.className}}
+                TODO {{name.valid}}
+            </div>
+            <div class="col-md-6">
+                <label for="og-address">address</label>
+                <input type="text" class="form-control" id="og-address" />
+            </div>
+        </div>
+        <div class="btn-group pull-right">
+            <button class="btn">Cancel</button>
+            <button class="btn btn-primary" [disabled]="!ogForm.form.valid">Save</button>
+        </div>
+    </form>
+</div>
