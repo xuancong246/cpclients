@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group">
+            <a routerLink="organizations" class="list-group-item" [routerLinkActive]="['active']">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Organization
+            </a>
+            <a routerLink="users" class="list-group-item" [routerLinkActive]="['active']">
+                <i class="fa fa-users fa-fw"></i>
+                Users
+            </a>
+            <a routerLink="roles" class="list-group-item" [routerLinkActive]="['active']">
+                <i class="fa fa-users fa-fw"></i>
+                Roles
+            </a>
+            <a routerLink="funds" class="list-group-item" [routerLinkActive]="['active']">
+                <i class="fa fa-users fa-fw"></i>
+                Funds
+            </a>
+            <a href="#" class="list-group-item" [routerLinkActive]="['active']">
+                <i class="fa fa-users fa-fw"></i>
+                Sample
+            </a>
+        </div>
+    </div>
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
+    </div>
+</div>

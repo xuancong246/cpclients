@@ -3,36 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CPSolutions", ".", "{51B4D365-83DE-46A8-83E0-72EA3C3CA232}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/localhost_37092"
-		Debug.AspNetCompiler.PhysicalPath = "..\CPSolutions\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37092\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/localhost_37092"
-		Release.AspNetCompiler.PhysicalPath = "..\CPSolutions\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_37092\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "37092"
-		SlnRelativePath = "..\CPSolutions\"
-	EndProjectSection
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CPSolutions.Api", "CPSolutions.Api\CPSolutions.Api.xproj", "{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{DC462D08-4CE0-469B-8126-B2415419E36E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSolutions.Client", "CPSolutions.Client\CPSolutions.Client.csproj", "{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51B4D365-83DE-46A8-83E0-72EA3C3CA232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51B4D365-83DE-46A8-83E0-72EA3C3CA232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{641E0A53-6FFA-4DAF-BFC1-997D7C84EF3E} = {DC462D08-4CE0-469B-8126-B2415419E36E}
 	EndGlobalSection
 EndGlobal
