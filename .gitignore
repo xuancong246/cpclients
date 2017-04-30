@@ -7,6 +7,15 @@ packages/
 CPSolutions.Api/bin/
 CPSolutions.Api/obj/
 
+CPSolutions.Application/bin/
+CPSolutions.Application/obj/
+
 CPSolutions.Client/bin/
 CPSolutions.Client/obj/
 CPSolutions.Client/node_modules/
+
+CPSolutions.Data/bin/
+CPSolutions.Data/obj/
+
+CPSolutions.Domain/bin/
+CPSolutions.Domain/obj/
