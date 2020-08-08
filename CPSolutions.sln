@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{DC462D08-4CE0-469B-8126-B2415419E36E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSolutions.Client", "CPSolutions.Client\CPSolutions.Client.csproj", "{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{584C2FC4-331F-4471-AC77-83DA416D7F6D}"
 EndProject
@@ -13,21 +11,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{74B0A2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{219D143C-74D8-4A47-928D-4161DCE8B360}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CPSolutions.Api", "CPSolutions.Api\CPSolutions.Api.xproj", "{AD938CA8-DE92-48C3-883E-E83387036926}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CPSolutions.Client", "CPSolutions.Client\CPSolutions.Client.csproj", "{1AAEC823-5CB3-4719-A57F-D36C28E46CD6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPSolutions.Api", "CPSolutions.Api\CPSolutions.Api.csproj", "{AD938CA8-DE92-48C3-883E-E83387036926}"
 	ProjectSection(ProjectDependencies) = postProject
 		{4A4E1771-E2F7-4209-8353-425B4BE0FDDA} = {4A4E1771-E2F7-4209-8353-425B4BE0FDDA}
 		{486D3194-CCD6-4D1F-A852-41039154D25B} = {486D3194-CCD6-4D1F-A852-41039154D25B}
 		{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A} = {49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A}
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CPSolutions.Application", "CPSolutions.Application\CPSolutions.Application.xproj", "{486D3194-CCD6-4D1F-A852-41039154D25B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPSolutions.Application", "CPSolutions.Application\CPSolutions.Application.csproj", "{486D3194-CCD6-4D1F-A852-41039154D25B}"
 	ProjectSection(ProjectDependencies) = postProject
+		{4A4E1771-E2F7-4209-8353-425B4BE0FDDA} = {4A4E1771-E2F7-4209-8353-425B4BE0FDDA}
 		{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A} = {49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A}
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CPSolutions.Domain", "CPSolutions.Domain\CPSolutions.Domain.xproj", "{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPSolutions.Domain", "CPSolutions.Domain\CPSolutions.Domain.csproj", "{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CPSolutions.Data", "CPSolutions.Data\CPSolutions.Data.xproj", "{4A4E1771-E2F7-4209-8353-425B4BE0FDDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CPSolutions.Data", "CPSolutions.Data\CPSolutions.Data.csproj", "{4A4E1771-E2F7-4209-8353-425B4BE0FDDA}"
 	ProjectSection(ProjectDependencies) = postProject
 		{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A} = {49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A}
 	EndProjectSection
@@ -67,5 +68,8 @@ Global
 		{486D3194-CCD6-4D1F-A852-41039154D25B} = {584C2FC4-331F-4471-AC77-83DA416D7F6D}
 		{49E5FCFD-D85B-4CF9-A8D0-45D3F6DF586A} = {74B0A2D0-BCCC-4983-B76F-DA69C4796A0A}
 		{4A4E1771-E2F7-4209-8353-425B4BE0FDDA} = {DC462D08-4CE0-469B-8126-B2415419E36E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E126CC29-31C0-45F7-A13C-A69D5729A2C5}
 	EndGlobalSection
 EndGlobal

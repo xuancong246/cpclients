@@ -1,40 +1,65 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using CPSolutions.Domain.Models.Admin;
+using CPSolutions.Application.AppServices.Admin;
+using CPSolutions.Domain.RepositoryContracts.Admin;
+using System.Web.Http;
+using System.Net.Http;
+using System.Net;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace CPSolutions.Api.Controllers.Admin
 {
     [Route("api/organizations")]
-    public class OrganizationsController : Controller
+    public class OrganizationsController : ApiController
     {
-        // GET: api/values
-        [HttpGet]
-        public IEnumerable<string> Get()
+        OrganizationAppService _organizationAppService;
+        IOrganizationRepository _organizationRepository;
+
+        public OrganizationsController(OrganizationAppService organizationAppService,
+            IOrganizationRepository organizationRepository)
         {
-            return new string[] { "value1", "value2" };
+            _organizationAppService = organizationAppService;
+            _organizationRepository = organizationRepository;
         }
 
-        // GET api/values/5
+        // GET: api/organizations
+        [HttpGet]
+        public IEnumerable<Organization> Get()
+        {
+            return _organizationAppService.GetAll();
+        }
+
+        // GET api/organizations/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST api/values
+        // POST api/organizations
         [HttpPost]
-        public void Post([FromBody]string value)
+        public Organization Post([FromBody]Organization organization)
         {
+            return _organizationAppService.Add(organization);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        // PUT api/organizations/5
+        [Route("{id}")]
+        [HttpPut]
+        public HttpResponseMessage Put([FromBody]Organization organizationDto)
         {
+            var organization = _organizationRepository.Get(organizationDto.Id);
+            if (organization == null)
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.NotFound, $"Organization {organizationDto.Id} not found");
+            }
+            _organizationAppService.Update(organizationDto, organization);
+            return new HttpResponseMessage(HttpStatusCode.OK);
         }
 
-        // DELETE api/values/5
+        // DELETE api/organizations/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
