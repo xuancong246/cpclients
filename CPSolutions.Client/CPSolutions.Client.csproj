@@ -25,7 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TypeScriptToolsVersion>1.8</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -99,7 +100,8 @@
     <Content Include="e2e\tsconfig.e2e.json" />
     <Content Include="src\app\admin\ad-funds\ad-funds.component.less" />
     <Content Include="src\app\admin\ad-organizations\ad-organization-editor.component.less" />
-    <Content Include="src\app\admin\ad-organizations\ad-organization-editor2.component.less" />
+    <Content Include="src\app\admin\ad-organizations\ad-organization-list.component.html" />
+    <Content Include="src\app\admin\ad-organizations\ad-organization-menu.component.html" />
     <Content Include="src\app\admin\ad-organizations\ad-organizations.component.less" />
     <Content Include="src\app\admin\ad-roles\ad-roles.component.less" />
     <Content Include="src\app\admin\ad-users\ad-users.component.less" />
@@ -129,7 +131,7 @@
     <Content Include="src\assets\i18n\vi.json" />
     <Content Include="src\tsconfig.app.json" />
     <Content Include="src\tsconfig.spec.json" />
-    <Content Include=".angular-cli.json" />
+    <Content Include="angular.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="tslint.json" />
@@ -140,7 +142,6 @@
     <Content Include="protractor.conf.js" />
     <Content Include="src\app\admin\ad-funds\ad-funds.component.html" />
     <Content Include="src\app\admin\ad-organizations\ad-organization-editor.component.html" />
-    <Content Include="src\app\admin\ad-organizations\ad-organization-editor2.component.html" />
     <Content Include="src\app\admin\ad-organizations\ad-organizations.component.html" />
     <Content Include="src\app\admin\ad-roles\ad-roles.component.html" />
     <Content Include="src\app\admin\ad-users\ad-users.component.html" />
@@ -165,7 +166,6 @@
     <Content Include="src\app\shared\shared.component.html" />
     <Content Include="src\favicon.ico" />
     <Content Include="src\index.html" />
-    <Content Include="src\styles.css" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -176,7 +176,9 @@
     <TypeScriptCompile Include="src\app\admin\ad-funds\ad-funds.component.spec.ts" />
     <TypeScriptCompile Include="src\app\admin\ad-funds\ad-funds.component.ts" />
     <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organization-editor.component.ts" />
-    <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organization-editor2.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organization-list.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organization-menu.component.ts" />
+    <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organization.service.ts" />
     <TypeScriptCompile Include="src\app\admin\ad-organizations\ad-organizations.component.ts" />
     <TypeScriptCompile Include="src\app\admin\ad-roles\ad-roles.component.spec.ts" />
     <TypeScriptCompile Include="src\app\admin\ad-roles\ad-roles.component.ts" />
@@ -255,6 +257,19 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="web.config" />
+    <Content Include="tsconfig.json" />
+    <Content Include="src\app\admin\ad-organizations\ad-organization-list.component.less" />
+    <Content Include="src\app\admin\ad-organizations\ad-organization-menu.component.less" />
+    <Content Include="src\styles.scss" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
