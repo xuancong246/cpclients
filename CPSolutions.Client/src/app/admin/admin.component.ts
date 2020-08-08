@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 
+import { AdOrganizationService } from './ad-organizations/ad-organization.service';
 import { AdOrganizationDataService } from './shared/services/data/ad-organization-data.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { AdOrganizationDataService } from './shared/services/data/ad-organizatio
     templateUrl: './admin.component.html',
     styleUrls: ['./admin.component.less'],
     providers: [
+        AdOrganizationService,
         AdOrganizationDataService
     ]
 })

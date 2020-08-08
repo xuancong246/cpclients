@@ -1,33 +1,60 @@
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-                aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" routerLink="">{{ "common.solution-name" | translate }}</a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li [routerLinkActive]="['active']"><a routerLink="home">{{ "menu.home" | translate }}</a></li>
-                <li [routerLinkActive]="['active']"><a routerLink="financial">{{ "menu.financial" | translate }}</a></li>
-                <li [routerLinkActive]="['active']"><a routerLink="project">{{ "menu.project" | translate }}</a></li>
-                <li [routerLinkActive]="['active']"><a routerLink="calendar">{{ "menu.calendar" | translate }}</a></li>
-                <li [routerLinkActive]="['active']"><a routerLink="admin">{{ "menu.admin" | translate }}</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
-            </ul>
-        </div>
-        <!--/.nav-collapse -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" routerLink="">{{ "CM.SOLUTION-NAME" | translate }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="home">{{ "CM.HOME" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="financial">{{ "CM.FINANCIAL" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="project">{{ "CM.PROJECT" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="calendar">{{ "CM.CALENDAR" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="admin">{{ "CM.ADMIN" | translate }}</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
     </div>
-    <!--/.container-fluid -->
 </nav>
+
+<!--<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" routerLink="">{{ "CM.SOLUTION-NAME" | translate }}</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+            aria-controls="navbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">Toggle navigation</span>
+    </button>
+    <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="home">{{ "CM.HOME" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="financial">{{ "CM.FINANCIAL" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="project">{{ "CM.PROJECT" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="calendar">{{ "CM.CALENDAR" | translate }}</a>
+            </li>
+            <li [routerLinkActive]="['active']" class="nav-item">
+                <a class="nav-link" routerLink="admin">{{ "CM.ADMIN" | translate }}</a>
+            </li>
+        </ul>
+    </div>
+</nav>-->
 <div class="container">
     <router-outlet></router-outlet>
 </div>

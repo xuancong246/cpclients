@@ -19,3 +19,4 @@ CPSolutions.Data/obj/
 
 CPSolutions.Domain/bin/
 CPSolutions.Domain/obj/
+*.js

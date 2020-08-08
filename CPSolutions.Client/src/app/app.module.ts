@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, Http } from '@angular/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
-import { TranslateModule, TranslateLoader, TranslateStaticLoader } from 'ng2-translate';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
@@ -13,9 +14,11 @@ import { CalendarModule } from './calendar/calendar.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HttpModule } from '@angular/http';
+import { RouterModule } from '@angular/router';
 
-export function TranslateLoaderFactory(http: Http) {
-    return new TranslateStaticLoader(http, '/assets/i18n', '.json');
+export function createTranslateLoader(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -27,11 +30,14 @@ export function TranslateLoaderFactory(http: Http) {
         BrowserModule,
         FormsModule,
         HttpModule,
+        HttpClientModule,
 
         TranslateModule.forRoot({
-            provide: TranslateLoader,
-            useFactory: TranslateLoaderFactory,
-            deps: [Http]
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
         }),
 
         AppRoutingModule,
@@ -39,6 +45,9 @@ export function TranslateLoaderFactory(http: Http) {
         FinancialModule,
         ProjectModule,
         CalendarModule
+    ],
+    exports: [
+        RouterModule
     ],
     providers: [],
     bootstrap: [AppComponent]

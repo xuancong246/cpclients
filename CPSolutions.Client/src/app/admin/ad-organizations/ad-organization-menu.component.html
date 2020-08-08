@@ -1,0 +1,12 @@
+<div cpsAdPageActionBar>
+    <ul class="list-inline">
+        <li class="list-inline-item" (click)="addOrganization()">
+            <i class="fa fa-plus" aria-hidden="true"></i>
+            {{ "CM.ADD" | translate }}
+        </li>
+        <li class="list-inline-item" *ngIf="selectedIds.length > 0">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+            {{ "CM.DELETE" | translate }}
+        </li>
+    </ul>
+</div>

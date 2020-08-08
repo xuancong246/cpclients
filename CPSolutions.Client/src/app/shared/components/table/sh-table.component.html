@@ -1,0 +1,16 @@
+<h3>sh table works</h3>
+<div style="display: table-header-group">
+    <div *ngFor="let column of columns; index as i"
+         [ngStyle]="{ 'width': columnsWidth[i] }"
+         style="display: table-cell">
+        {{ getHeading(i) }}
+    </div>
+</div>
+<div *ngFor="let datarow of dataset; index as i"
+     style="display: table-row;">
+    <div *ngFor="let column of columns; index as j"
+         [ngStyle]="{ 'width': columnsWidth[j] }"
+         style="display: table-cell">
+        {{ getCellContent(i, j) }}
+    </div>
+</div>
