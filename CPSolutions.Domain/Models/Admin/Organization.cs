@@ -1,17 +1,16 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using System;
 
-namespace CPSolutions.Domain.Admin
+namespace CPSolutions.Domain.Models.Admin
 {
     public class Organization
     {
-        [BsonElement("_id")]
-        public ObjectId Id { get; set; }
-        [BsonElement("name")]
+        public string Id { get; set; }
         public string Name { get; set; }
-        [BsonElement("address")]
         public string Address { get; set; }
-        [BsonElement("description")]
         public string Description { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public DateTime ModifiedDate { get; set; }
     }
 }
