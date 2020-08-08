@@ -1,26 +1,30 @@
 <div>
-    <h3>organization-info</h3>
-    <form class="form-horizontal" #ogForm="ngForm">
-        TODO object {{toString}}
+    <h3>{{ "ORG.INFO" | translate }}</h3>
+    <form class="form-horizontal" [formGroup]="editorForm">
         <div class="row form-group">
             <div class="col-md-6">
-                <label for="og-name">name</label>
-                <input type="text" class="form-control" id="og-name" name="ogName"
-                       [(ngModel)]="organization.name" required #spy #name="ngModel" />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    organization-name-is-required
+                <label for="og-name">{{ "CM.NAME" | translate }}</label>
+                <input type="text" class="form-control" id="og-name" formControlName="name" />
+                <div [hidden]="editorForm.get('name').valid || editorForm.get('name').pristine" class="alert alert-danger">
+                    {{ "ERR.NAME-REQUIRED" | translate }}
                 </div>
-                TODO remove {{spy.className}}
-                TODO {{name.valid}}
             </div>
             <div class="col-md-6">
-                <label for="og-address">address</label>
-                <input type="text" class="form-control" id="og-address" />
+                <label for="og-address">{{ "CM.ADDRESS" | translate }}</label>
+                <input type="text" class="form-control" id="og-address" formControlName="address" />
             </div>
         </div>
-        <div class="btn-group pull-right">
-            <button class="btn">Cancel</button>
-            <button class="btn btn-primary" [disabled]="!ogForm.form.valid">Save</button>
+        <div class="row form-group">
+            <div class="col-md-6">
+                <label for="og-description">{{ "CM.DESCRIPTION" | translate }}</label>
+                <input type="text" class="form-control" id="og-description" formControlName="description" />
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="btn-group pull-right">
+                <button class="btn" (click)="cancel()">Cancel</button>
+                <button class="btn btn-primary" [disabled]="editorForm.status === 'INVALID'" (click)="save()">Save</button>
+            </div>
         </div>
     </form>
 </div>

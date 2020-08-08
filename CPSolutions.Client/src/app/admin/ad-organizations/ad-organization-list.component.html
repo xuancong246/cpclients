@@ -1,0 +1,23 @@
+<cp-sh-table [columns]="congtest" [dataset]="congtestData"></cp-sh-table>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>{{ "CM.NAME" | translate }}</th>
+            <th>{{ "CM.ADDRESS" | translate }}</th>
+            <th>{{ "CM.DESCRIPTION" | translate }}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let organization of organizations">
+            <td><input type="checkbox" (change)="toggleSelection(organization.id)" /></td>
+            <td>
+                <a (click)="selectOrganization(organization)">
+                    {{ organization.name }}
+                </a>
+            </td>
+            <td>{{ organization.address }}</td>
+            <td>{{ organization.description }}</td>
+        </tr>
+    </tbody>
+</table>

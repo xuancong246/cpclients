@@ -1,18 +1,31 @@
 ﻿{
-  "common": {
-    "dashboard": "Dashboard",
-    "settings": "Settings",
-    "solution-name": "CP Solutions"
-  },
-  "fi": {
-    "input-cash": "Input cash",
-    "output-cash": "Output cash"
-  },
-  "menu": {
-    "admin": "Admin",
-    "calendar": "Calendar",
-    "financial": "Financial",
-    "home": "Home",
-    "project": "Project"
-  }
+    "CM": {
+        "ADD": "Add",
+        "ADDRESS": "Address",
+        "ADMIN": "Admin",
+        "CALENDAR": "Calendar",
+        "DASHBOARD": "Dashboard",
+        "DELETE": "Delete",
+        "DESCRIPTION": "Description",
+        "FINANCIAL": "Financial",
+        "HOME": "Home",
+        "NAME": "Name",
+        "ORGANIZATIONS": "Organizations",
+        "PROJECT": "Project",
+        "ROLES": "Roles",
+        "SETTINGS": "Settings",
+        "SOLUTION-NAME": "CP Solutions",
+        "USERS": "Users"
+    },
+    "ERR": {
+        "NAME-REQUIRED": "Name is required"
+    },
+    "FI": {
+        "INPUT-CASH": "Input cash",
+        "OUTPUT-CASH": "Output cash"
+    },
+    "ORG": {
+        "INFO": "Organization info",
+        "MANAGEMENT": "Organization management"
+    }
 }

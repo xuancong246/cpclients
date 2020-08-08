@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
-import { TranslateService } from 'ng2-translate';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'cps-root',
     templateUrl: './app.component.html',
-    styleUrls: ['./app.component.less']
+    styleUrls: ['./app.component.less'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class AppComponent {

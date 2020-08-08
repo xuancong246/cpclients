@@ -22,9 +22,9 @@ export class AdOrganizationsComponent implements OnInit {
 
         this._adOrganizationDataService.getOrganizations()
             .subscribe(
-            organizations => self.organizations = organizations,
-            error => console.log(error)
-        );
+                res => self.organizations = res._body,
+                error => console.log(error)
+            );
     }
 
     addOrganization() {
@@ -32,8 +32,13 @@ export class AdOrganizationsComponent implements OnInit {
         this.selectedOrganization = null;
     }
 
-    selectOrganization(organization: AdOrganizationModel) {
+    onEditOrganization(organization: AdOrganizationModel) {
         this.isAddingOrganization = false;
         this.selectedOrganization = organization;
+    }
+
+    cancelEditor() {
+        this.isAddingOrganization = false;
+        this.selectedOrganization = null;
     }
 }
