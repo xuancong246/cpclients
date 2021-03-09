@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from "@angular/core";
 import { Column, ColumnWidth } from "app/shared/models/table-contributor";
 import { ShortcutMenu, ShortcutMenuItem } from "app/shared/models/shortcut-menu-contributor";
 
@@ -14,6 +14,8 @@ export class ShTableComponent implements OnInit {
     @Input() dataset: any[];
     @Input() shortcutMenu: ShortcutMenu;
     @Input() displayedColumns: string[];
+
+    @Output() rowActionFired = new EventEmitter();
 
     public columnsWidth: string[] = [];
 
@@ -44,8 +46,10 @@ export class ShTableComponent implements OnInit {
         return '';
     }
 
-    clickMenuItem(item: ShortcutMenuItem) {
-        console.log(`congtest: ${ item.action }`);
+    clickMenuItem(event: string, element: any) {
+        console.log(`congtest: ${ event }`);
+        console.log(element);
         // this.menuItemClicked.emit(action);
+        this.rowActionFired.emit({ action: event, index: element });
     }
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ShortcutMenu, ShortcutMenuItem } from 'app/shared/models/shortcut-menu-contributor';
 
 @Component({
@@ -11,8 +11,9 @@ import { ShortcutMenu, ShortcutMenuItem } from 'app/shared/models/shortcut-menu-
 
 export class ShShortcutMenuComponent {
     @Input() shortcutMenu: ShortcutMenu;
+    @Output() menuItemClicked = new EventEmitter();
 
     onClickMenuItem(item: ShortcutMenuItem) {
-        alert(item.text);
+        this.menuItemClicked.emit(item.action);
     }
 }

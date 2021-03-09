@@ -12,7 +12,8 @@
 <cp-sh-table [columns]="congtest"
              [dataset]="congtestData"
              [shortcutMenu]="shortcutMenu"
-             [displayedColumns]="displayedColumns"></cp-sh-table>
+             [displayedColumns]="displayedColumns"
+             (rowActionFired)="doActionOnRow($event)"></cp-sh-table>
 <table class="table table-hover">
     <thead>
         <tr>

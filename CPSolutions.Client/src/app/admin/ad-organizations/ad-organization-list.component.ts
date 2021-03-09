@@ -13,7 +13,7 @@ import { ShortcutMenu } from 'app/shared/models/shortcut-menu-contributor';
 export class AdOrganizationListComponent implements OnInit {
     @Input() organizations: AdOrganizationModel[];
     @Output() onClickName = new EventEmitter<AdOrganizationModel>();
-    @Output() menuItemClicked: EventEmitter<RowDropdownAction> = new EventEmitter<RowDropdownAction>();
+    @Output() editItemFired: EventEmitter<string> = new EventEmitter<string>();
 
     public congtest: Column[] = [{
         key: 'name',
@@ -39,6 +39,7 @@ export class AdOrganizationListComponent implements OnInit {
             { action: 'delete', text: 'Delete' }
         ]
     };
+
     public displayedColumns: string[] = ['name', 'address', 'description'];
 
     constructor(private _adOrganizationService: AdOrganizationService) {
@@ -69,8 +70,12 @@ export class AdOrganizationListComponent implements OnInit {
         this._adOrganizationService.toggleSelection(id);
     }
 
-    clickMenuItem(action: RowDropdownAction) {
-        console.log(`congtest: ${ action }`);
+    doActionOnRow(event) {
+        console.log(event);
         // this.menuItemClicked.emit(action);
+        const organization = this.organizations[event.index];
+        if (event.action === 'edit') {
+            this.editItemFired.emit(organization.id);
+        }
     }
 }

@@ -20,8 +20,9 @@ congtest {{ shortcutMenu | json }}
 <table mat-table [dataSource]="dataset">
     <ng-container *ngFor="let column of columns" matColumnDef="{{ column.key }}">
         <th mat-header-cell *matHeaderCellDef>No. (old) {{ column.heading.value }}</th>
-        <td mat-cell *matCellDef="let element">{{ element[column.content.propertyName] }}
-            <cp-sh-shortcut-menu [shortcutMenu]="shortcutMenu"></cp-sh-shortcut-menu>
+        <td mat-cell *matCellDef="let element; let idx = index;">{{ element[column.content.propertyName] }}
+            <cp-sh-shortcut-menu [shortcutMenu]="shortcutMenu"
+                                 (menuItemClicked)="clickMenuItem($event, idx)"></cp-sh-shortcut-menu>
         </td>
     </ng-container>
 
@@ -33,7 +34,7 @@ congtest {{ shortcutMenu | json }}
     <div class="sh-table__head">
         <div class="sh-table__tr">
             <div *ngFor="let column of columns; index as i"
-                 class="sh-table__cell">{{ getHeading(i) }}</div>
+                 class="sh-table__cell">{{ getHeading(i) }} current</div>
             <div *ngIf="shortcutMenu" class="sh-table__cell"></div>
         </div>
     </div>

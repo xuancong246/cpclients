@@ -7,4 +7,5 @@
 </div>
 <cps-ad-organization-list *ngIf="organizations.length"
                           [organizations]="organizations"
-                          (onClickName)="onEditOrganization($event)"></cps-ad-organization-list>
+                          (onClickName)="onEditOrganization($event)"
+                          (editItemFired)="onEditOrganization($event)"></cps-ad-organization-list>

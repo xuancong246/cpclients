@@ -32,9 +32,10 @@ export class AdOrganizationsComponent implements OnInit {
         this.selectedOrganization = null;
     }
 
-    onEditOrganization(organization: AdOrganizationModel) {
-        this.isAddingOrganization = false;
-        this.selectedOrganization = organization;
+    onEditOrganization(organizationId: string) {
+        // this.isAddingOrganization = false;
+        // this.selectedOrganization = organization;
+        console.log(`edit org id = ${organizationId}`);
     }
 
     cancelEditor() {
