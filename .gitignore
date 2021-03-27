@@ -3,7 +3,6 @@
 npm-debug.log
 .vs/
 
-CPSolutions.Client/bin/
-CPSolutions.Client/obj/
+CPSolutions.Client/dist/
 CPSolutions.Client/node_modules/
 *.js

@@ -14,7 +14,6 @@ import { CalendarModule } from './calendar/calendar.module';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -29,7 +28,6 @@ export function createTranslateLoader(http: HttpClient) {
     imports: [
         BrowserModule,
         FormsModule,
-        HttpModule,
         HttpClientModule,
 
         TranslateModule.forRoot({
