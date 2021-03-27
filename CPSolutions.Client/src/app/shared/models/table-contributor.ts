@@ -15,6 +15,7 @@ export interface ColumnContent {
 }
 
 export interface Column {
+    key: string,
     width: ColumnWidth,
     heading: ColumnHeading,
     content: ColumnContent,

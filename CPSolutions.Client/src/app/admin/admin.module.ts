@@ -18,6 +18,8 @@ import { AdOrganizationMenuComponent } from './ad-organizations/ad-organization-
 import { RouterModule } from '@angular/router';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SharedModule } from 'app/shared/shared.module';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
     imports: [
@@ -26,7 +28,9 @@ import { SharedModule } from 'app/shared/shared.module';
         ReactiveFormsModule,
         TranslateModule,
         AdminRoutingModule,
-        SharedModule
+        SharedModule,
+        MatSliderModule,
+        MatTableModule
     ],
     exports: [
         RouterModule

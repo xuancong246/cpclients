@@ -1,0 +1,11 @@
+congtest {{ shortcutMenu }}
+<div class="dropdown" *ngIf="shortcutMenu && shortcutMenu.items.length">
+    <button class="" data-toggle="dropdown">
+        <i class="fa fa-ellipsis-v"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <li *ngFor="let item of shortcutMenu.items">
+            <span (click)="onClickMenuItem(item)">abc {{ item | json }}</span>
+        </li>
+    </ul>
+</div>

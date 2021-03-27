@@ -3,6 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AdOrganizationModel } from '../shared/models/ad-organization.model';
 import { AdOrganizationService } from './ad-organization.service';
 import { Column } from 'app/shared/models/table-contributor';
+import { ShortcutMenu } from 'app/shared/models/shortcut-menu-contributor';
 
 @Component({
     selector: 'cps-ad-organization-list',
@@ -15,19 +16,30 @@ export class AdOrganizationListComponent implements OnInit {
     @Output() menuItemClicked: EventEmitter<RowDropdownAction> = new EventEmitter<RowDropdownAction>();
 
     public congtest: Column[] = [{
+        key: 'name',
         width: { type: 'unset' },
         heading: { type: 'languageKey', value: 'congtest' },
         content: { type: 'binding', propertyName: 'name' }
     }, {
+        key: 'address',
         width: { type: 'unset' },
         heading: { type: 'languageKey', value: 'congtest' },
         content: { type: 'binding', propertyName: 'address' }
     }, {
+        key: 'description',
         width: { type: 'unset' },
         heading: { type: 'languageKey', value: 'congtest' },
         content: { type: 'binding', propertyName: 'description' }
     }];
     public congtestData: any[] = [];
+
+    public shortcutMenu: ShortcutMenu = {
+        items: [
+            { action: 'edit', text: 'Edit' },
+            { action: 'delete', text: 'Delete' }
+        ]
+    };
+    public displayedColumns: string[] = ['name', 'address', 'description'];
 
     constructor(private _adOrganizationService: AdOrganizationService) {
     }

@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, TemplateRef, ViewEncapsulation } from "@angular/core";
+import { Component, Input, OnInit, ViewEncapsulation } from "@angular/core";
 import { Column, ColumnWidth } from "app/shared/models/table-contributor";
+import { ShortcutMenu, ShortcutMenuItem } from "app/shared/models/shortcut-menu-contributor";
 
 @Component({
     selector: 'cp-sh-table',
@@ -11,7 +12,8 @@ import { Column, ColumnWidth } from "app/shared/models/table-contributor";
 export class ShTableComponent implements OnInit {
     @Input() columns: Column[];
     @Input() dataset: any[];
-    @Input() actionButtonTemplate: TemplateRef<any>;
+    @Input() shortcutMenu: ShortcutMenu;
+    @Input() displayedColumns: string[];
 
     public columnsWidth: string[] = [];
 
@@ -40,5 +42,10 @@ export class ShTableComponent implements OnInit {
         console.log(this.columns[columnIndex]);
         console.log(this.dataset[dataIndex]);
         return '';
+    }
+
+    clickMenuItem(item: ShortcutMenuItem) {
+        console.log(`congtest: ${ item.action }`);
+        // this.menuItemClicked.emit(action);
     }
 }

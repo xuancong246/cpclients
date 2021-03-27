@@ -1,5 +1,5 @@
 <h3 cpsAdPageHeader>{{ "ORG.MANAGEMENT" | translate }}</h3>
-<cps-ad-organization-menu (onClickAdd)="addOrganization($event)"></cps-ad-organization-menu>
+<!-- <cps-ad-organization-menu (onClickAdd)="addOrganization($event)"></cps-ad-organization-menu> -->
 <div *ngIf="selectedOrganization || isAddingOrganization">
     <cps-ad-organization-editor [organization]="selectedOrganization"
                                 (cancelEditor)="cancelEditor($event)">
