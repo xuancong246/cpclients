@@ -32,16 +32,16 @@ import { SharedModule } from 'app/shared/shared.module';
         RouterModule
     ],
     declarations: [
-        AdminComponent,
-        AdOrganizationsComponent,
-        AdUsersComponent,
-        AdRolesComponent,
         AdFundsComponent,
-        AdPageHeaderDirective,
-        AdPageActionBarDirective,
+        AdminComponent,
         AdOrganizationEditorComponent,
         AdOrganizationListComponent,
-        AdOrganizationMenuComponent
+        AdOrganizationMenuComponent,
+        AdOrganizationsComponent,
+        AdPageActionBarDirective,
+        AdPageHeaderDirective,
+        AdRolesComponent,
+        AdUsersComponent
     ]
 })
 export class AdminModule { }

@@ -7,3 +7,5 @@ type ColumnWidthType = 'distance' | 'percent' | 'unset';
 type ColumnContentType = 'raw' | 'binding';
 
 type ColumnContentAlignment = 'left' | 'center' | 'right';
+
+type RowDropdownAction = 'delete' | 'detail' | 'edit';

@@ -1,3 +1,9 @@
+@import './assets/css/themes/general-theme-variables.scss';
+@import './assets/css/themes/default-theme-variables.scss';
+
+@import './assets/css/base.scss';
+@import './assets/css/application.scss';
+
 /* You can add global styles to this file, and also import other style files */
 .ng-valid[required], .ng-valid.required {
     border-left: 5px solid green;

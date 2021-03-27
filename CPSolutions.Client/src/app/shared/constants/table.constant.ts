@@ -1,4 +1,8 @@
 export const TableConstant = {
+    ColumnContentType: {
+        Raw: 'raw',
+        Binding: 'binding'
+    },
     ColumnHeadingType: {
         Text: 'text',
         LanguageKey: 'languageKey'
@@ -10,9 +14,5 @@ export const TableConstant = {
     ColumnWidthType: {
         Distance: 'distance',
         Percent: 'percent'
-    },
-    ColumnContentType: {
-        Raw: 'raw',
-        Binding: 'binding'
     }
 }

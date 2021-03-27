@@ -1,16 +1,18 @@
-<h3>sh table works</h3>
-<div style="display: table-header-group">
-    <div *ngFor="let column of columns; index as i"
-         [ngStyle]="{ 'width': columnsWidth[i] }"
-         style="display: table-cell">
-        {{ getHeading(i) }}
+<div class="sh-table">
+    <div class="sh-table__head">
+        <div class="sh-table__tr">
+            <div *ngFor="let column of columns; index as i"
+                 class="sh-table__cell">{{ getHeading(i) }}</div>
+            <div *ngIf="actionButtonTemplate" class="sh-table__cell"></div>
+        </div>
     </div>
-</div>
-<div *ngFor="let datarow of dataset; index as i"
-     style="display: table-row;">
-    <div *ngFor="let column of columns; index as j"
-         [ngStyle]="{ 'width': columnsWidth[j] }"
-         style="display: table-cell">
-        {{ getCellContent(i, j) }}
+    <div class="sh-table__tbody">
+        <div *ngFor="let datarow of dataset; index as i"
+             class="sh-table__tr">
+            <div *ngFor="let column of columns; index as j"
+                 class="sh-table__cell">{{ getCellContent(i, j) }}</div>
+            <ng-container *ngIf="actionButtonTemplate"
+                          [ngTemplateOutlet]="actionButtonTemplate"></ng-container>
+        </div>
     </div>
 </div>

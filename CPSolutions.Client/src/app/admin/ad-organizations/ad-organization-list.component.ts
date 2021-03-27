@@ -12,6 +12,7 @@ import { Column } from 'app/shared/models/table-contributor';
 export class AdOrganizationListComponent implements OnInit {
     @Input() organizations: AdOrganizationModel[];
     @Output() onClickName = new EventEmitter<AdOrganizationModel>();
+    @Output() menuItemClicked: EventEmitter<RowDropdownAction> = new EventEmitter<RowDropdownAction>();
 
     public congtest: Column[] = [{
         width: { type: 'unset' },
@@ -54,5 +55,10 @@ export class AdOrganizationListComponent implements OnInit {
     toggleSelection(id: string) {
         console.log(id);
         this._adOrganizationService.toggleSelection(id);
+    }
+
+    clickMenuItem(action: RowDropdownAction) {
+        console.log(`congtest: ${ action }`);
+        // this.menuItemClicked.emit(action);
     }
 }

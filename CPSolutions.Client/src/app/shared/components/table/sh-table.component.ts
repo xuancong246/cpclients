@@ -1,14 +1,17 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input, OnInit, TemplateRef, ViewEncapsulation } from "@angular/core";
 import { Column, ColumnWidth } from "app/shared/models/table-contributor";
 
 @Component({
     selector: 'cp-sh-table',
-    templateUrl: './sh-table.component.html'
+    templateUrl: './sh-table.component.html',
+    styleUrls: ['./sh-table.component.scss'],
+    encapsulation: ViewEncapsulation.None
 })
 
 export class ShTableComponent implements OnInit {
     @Input() columns: Column[];
     @Input() dataset: any[];
+    @Input() actionButtonTemplate: TemplateRef<any>;
 
     public columnsWidth: string[] = [];
 
