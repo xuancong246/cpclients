@@ -4,15 +4,16 @@ import { Observable } from 'rxjs';
 
 import { environment } from '../../../../../environments/environment';
 import { AdOrganizationModel } from '../../models/ad-organization.model';
+import { Organization } from 'app/shared/models/organization';
 
 @Injectable()
 export class AdOrganizationDataService {
     constructor(private _http: HttpClient) {
     }
 
-    getOrganizations(): any { //Observable<AdOrganizationModel[]>
+    getOrganizations(): Observable<Organization[]> { //Observable<AdOrganizationModel[]>
         return this._http
-            .get(environment.apiUrl + 'organizations', { responseType: 'json' });
+            .get<Organization[]>(environment.apiUrl + 'organizations', { responseType: 'json' });
         //    .subscribe(
         //        (response: Response) => response.json().map(toOrganization),
         //        () => this.handleGetOrganizations

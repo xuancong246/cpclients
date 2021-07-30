@@ -5,6 +5,10 @@
                                 (cancelEditor)="cancelEditor($event)">
     </cps-ad-organization-editor>
 </div>
+congtest {{ organizations.length }}
+<cp-sh-side-panel>abc</cp-sh-side-panel>
+<span #congtestspan></span>
+<button (click)="congtestParentClick()">Test click</button>
 <cps-ad-organization-list *ngIf="organizations.length"
                           [organizations]="organizations"
                           (onClickName)="onEditOrganization($event)"

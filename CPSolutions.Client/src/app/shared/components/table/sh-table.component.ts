@@ -18,6 +18,8 @@ export class ShTableComponent implements OnInit {
     @Output() rowActionFired = new EventEmitter();
 
     public columnsWidth: string[] = [];
+    // congtestTemplate: string = `<cp-sh-shortcut-menu [shortcutMenu]="shortcutMenu" (menuItemClicked)=""></cp-sh-shortcut-menu>`;
+    congtestTemplate: string = `cp-sh-shortcut-menu [shortcutMenu]="shortcutMenu" (menuItemClicked)=""></cp-sh-shortcut-menu`;
 
     ngOnInit() {
         for (let i = 0; i < this.columns.length; i++) {
@@ -27,6 +29,7 @@ export class ShTableComponent implements OnInit {
             if (columnWidth.type === 'distance') width = `${columnWidth.value}px`;
             this.columnsWidth.push(width);
         }
+        console.log(this.dataset);
     }
 
     public getHeading(columnIndex: number): string {

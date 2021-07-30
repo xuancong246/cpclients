@@ -29,8 +29,10 @@ congtest {{ shortcutMenu | json }}
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
+congtest render dynamic content;
+<div [innerHTML]="congtestTemplate"></div>
 
-<div class="sh-table">
+<!-- <div class="sh-table">
     <div class="sh-table__head">
         <div class="sh-table__tr">
             <div *ngFor="let column of columns; index as i"
@@ -57,4 +59,4 @@ congtest {{ shortcutMenu | json }}
             </ng-container>
         </div>
     </div>
-</div>
+</div> -->

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ShSidePanelComponent } from 'app/shared/components/side-panel/sh-side-panel.component';
+import { Organization } from 'app/shared/models/organization';
 
 import { AdOrganizationModel } from '../shared/models/ad-organization.model';
 import { AdOrganizationDataService } from '../shared/services/data/ad-organization-data.service';
@@ -11,18 +13,20 @@ import { AdOrganizationDataService } from '../shared/services/data/ad-organizati
 export class AdOrganizationsComponent implements OnInit {
     isAddingOrganization: boolean = false;
     selectedOrganization: AdOrganizationModel;
+    @ViewChild('congtestspan') drawerTest: ElementRef;
+    @ViewChild(ShSidePanelComponent) sidePanel: ShSidePanelComponent;
 
     constructor(private _adOrganizationDataService: AdOrganizationDataService) {
     }
 
-    organizations: AdOrganizationModel[] = [];
+    organizations: Organization[] = [];
 
     ngOnInit() {
         let self = this;
 
         this._adOrganizationDataService.getOrganizations()
             .subscribe(
-                res => self.organizations = res._body,
+                res => self.organizations = res,
                 error => console.log(error)
             );
     }
@@ -41,5 +45,10 @@ export class AdOrganizationsComponent implements OnInit {
     cancelEditor() {
         this.isAddingOrganization = false;
         this.selectedOrganization = null;
+    }
+
+    congtestParentClick() {
+        // console.log(this.drawerTest);
+        this.sidePanel.togglePanel();
     }
 }
